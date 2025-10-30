@@ -10,7 +10,7 @@ const PerformanceReport = ({ setCurrentPage, state, district, year }) => {
 
         if (!state || !district || !year) return;
 
-        fetch(`http://localhost:7000/api/mgnrega?state_name=${state}&district_name=${district}&fin_year=${year}`)
+        fetch(`https://bharat-build.onrender.com/api/mgnrega?state_name=${state}&district_name=${district}&fin_year=${year}`)
             .then((res) => res.json())
             .then((data) => {
                 setRecords(data.records || []);
