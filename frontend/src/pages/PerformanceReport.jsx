@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/Images/logo/Logo1.png"
 import Card from "../components/ui/Card"
+import Loader from "../components/ui/Loader"
 
 const PerformanceReport = ({ setCurrentPage, state, district, year }) => {
 
@@ -21,7 +22,6 @@ const PerformanceReport = ({ setCurrentPage, state, district, year }) => {
     return (
 
         <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
-            {console.log(records)}
             <header className="bg-linear-to-r from-[#1E8449] via-[#F4D03F] to-[#5DADE2] text-[#0b3d91] py-6 shadow-md border-b-4 border-[#0b3d91]">
                 <div className="max-w-7xl px-6 flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -106,7 +106,7 @@ const PerformanceReport = ({ setCurrentPage, state, district, year }) => {
 
                         </div>
                     ) : (
-                        <p>No data found</p>
+                        <Loader />
                     )}
                 </div>
             </div>
